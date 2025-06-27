@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="../css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+  </head>
+  <body
+    class="bg-surface font-poppins flex h-full items-center justify-center p-6"
+  >
+    <main class="flex h-full w-full flex-col items-center justify-center gap-4">
+      <section
+        id="student-details-section"
+        class="hidden transition-all duration-200"
+      >
+        <form
+          id="student-details-form"
+          class="bg-surface-2 flex w-full max-w-[360px] flex-col items-center gap-4 rounded-3xl p-6"
+        >
+          <div class="first-name-input-wrapper flex flex-col gap-1">
+            <label class="text-text-primary px-1 text-sm" for="first-name-input"
+              >First name</label
+            >
+
+            <input
+              type="text"
+              autocomplete="off"
+              id="first-name-input"
+              class="bg-surface-3 border-surface-4 focus:border-surface-3 focus:!ring-primary-400 caret-primary-50 text-primary-50 box-border w-full rounded-lg border-2 px-3 py-1.5 focus:!ring-1 focus:outline-none"
+            />
+            <p
+              id="first-name-related-error"
+              class="text-text-error px-1 text-sm"
+            ></p>
+          </div>
+          <div class="last-name-input-wrapper flex flex-col gap-1">
+            <label class="text-text-primary px-1 text-sm" for="email-input"
+              >Last name</label
+            >
+            <input
+              type="text"
+              id="last-name-input"
+              class="bg-surface-3 border-surface-4 focus:border-surface-3 focus:!ring-primary-400 caret-primary-50 text-primary-50 box-border w-full rounded-lg border-2 px-3 py-1.5 focus:!ring-1 focus:outline-none"
+            />
+            <p
+              id="last-name-related-error"
+              class="text-text-error px-1 text-sm"
+            ></p>
+          </div>
+          <div class="roll-no-input-wrapper flex flex-col gap-1">
+            <label class="text-text-primary px-1 text-sm" for="roll-no-input"
+              >Roll no</label
+            >
+            <input
+              type="number"
+              id="roll-no-input"
+              class="bg-surface-3 border-surface-4 focus:border-surface-3 focus:!ring-primary-400 caret-primary-50 text-primary-50 box-border w-full rounded-lg border-2 px-3 py-1.5 focus:!ring-1 focus:outline-none"
+            />
+            <p
+              id="roll-no-related-error"
+              class="text-text-error px-1 text-sm"
+            ></p>
+          </div>
+
+          <button class="button-fill">Next</button>
+        </form>
+      </section>
+      <section
+        id="student-credential-section"
+        class="hidden opacity-0 transition-all duration-200"
+      >
+        <form
+          id="student-credential-form"
+          class="bg-surface-2 flex w-full max-w-[360px] flex-col items-center gap-4 rounded-3xl p-6"
+        >
+          <div class="email-input-wrapper flex flex-col gap-1">
+            <label class="text-text-primary px-1 text-sm" for="emil-input"
+              >Email</label
+            >
+
+            <input
+              type="email"
+              autocomplete="off"
+              id="email-input"
+              class="bg-surface-3 border-surface-4 focus:border-surface-3 focus:!ring-primary-400 caret-primary-50 text-primary-50 box-border w-full rounded-lg border-2 px-3 py-1.5 focus:!ring-1 focus:outline-none"
+            />
+            <p
+              id="email-related-error"
+              class="text-text-error px-1 text-sm"
+            ></p>
+          </div>
+          <div class="password-input-wrapper flex flex-col gap-1">
+            <label class="text-text-primary px-1 text-sm" for="password-input"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password-input"
+              class="bg-surface-3 border-surface-4 focus:border-surface-3 focus:!ring-primary-400 caret-primary-50 text-primary-50 box-border w-full rounded-lg border-2 px-3 py-1.5 focus:!ring-1 focus:outline-none"
+            />
+            <p
+              id="password-related-error"
+              class="text-text-error px-1 text-sm"
+            ></p>
+          </div>
+          <div class="re-enter-password-input-wrapper flex flex-col gap-1">
+            <label class="text-text-primary px-1 text-sm" for="re-enter-input"
+              >Re-enter Password</label
+            >
+            <input
+              type="password"
+              id="re-enter-password-input"
+              class="bg-surface-3 border-surface-4 focus:border-surface-3 focus:!ring-primary-400 caret-primary-50 text-primary-50 box-border w-full rounded-lg border-2 px-3 py-1.5 focus:!ring-1 focus:outline-none"
+            />
+            <p
+              id="re-enter-password-related-error"
+              class="text-text-error px-1 text-sm"
+            ></p>
+          </div>
+          <div class="flex w-full gap-4">
+            <button
+              class="button-outline"
+              type="button"
+              id="student-credential-form-previous-button"
+            >
+              Previous
+            </button>
+            <button class="button-fill">Next</button>
+          </div>
+        </form>
+      </section>
+      <section
+        id="pfp-selection-section"
+        class="flex min-h-0 w-full max-w-[600px] flex-col"
+      >
+        <form
+          action=""
+          id="pfp-selection-form"
+          class="bg-surface-2 flex min-h-0 flex-col gap-4 rounded-3xl p-6 lg:gap-5"
+        >
+          <div
+            class="wrapper flex w-full shrink-0 flex-col items-center gap-2 lg:gap-3"
+          >
+            <div class="selected-pfp-wrapper h-[70px] w-[70px]">
+              <div
+                id="selected-pfp"
+                class="image-wrapper h-full w-full transition-all duration-150"
+              >
+                <img
+                  class="h-full w-full"
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m51.png?updatedAt=1750952706527"
+                />
+              </div>
+            </div>
+            <p class="text-text-primary">Choose a profile photo</p>
+          </div>
+          <div
+            class="wrapper flex h-fit min-h-0 w-full flex-col gap-2 lg:gap-3"
+          >
+            <div class="gender-selection-wrapper flex w-full">
+              <div
+                class="text-text-primary bg-surface-3 w-full rounded-xl px-4 py-2 text-center transition-all duration-200"
+                id="male-toggle-button"
+              >
+                Male
+              </div>
+              <div
+                class="text-text-primary w-full rounded-xl px-4 py-2 text-center transition-all duration-200"
+                id="female-toggle-button"
+              >
+                female
+              </div>
+            </div>
+            <div
+              class="pfp-container border-surface-3 scrollbar-hide text-text-primary flex h-full flex-col items-center gap-4 overflow-y-scroll rounded-3xl border-2 p-4 lg:gap-5 lg:p-5"
+            >
+              <div id="catergory-1" class="auto-grid w-full">
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m53.png?updatedAt=1750952781028"
+                  class="h-full w-full"
+                  alt=""
+                />
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m51.png?updatedAt=1750952706527"
+                  class="h-full w-full"
+                  alt=""
+                />
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m53.png?updatedAt=1750952781028"
+                  class="h-full w-full"
+                  alt=""
+                />
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m51.png?updatedAt=1750952706527"
+                  class="h-full w-full"
+                  alt=""
+                />
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m53.png?updatedAt=1750952781028"
+                  class="h-full w-full"
+                  alt=""
+                />
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m51.png?updatedAt=1750952706527"
+                  class="h-full w-full"
+                  alt=""
+                />
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m53.png?updatedAt=1750952781028"
+                  class="h-full w-full"
+                  alt=""
+                />
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m51.png?updatedAt=1750952706527"
+                  class="h-full w-full"
+                  alt=""
+                />
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m53.png?updatedAt=1750952781028"
+                  class="h-full w-full"
+                  alt=""
+                />
+              </div>
+              <div class="catergory-1-wrapper flex w-full flex-col gap-3">
+                <p class="px-1">Meme</p>
+                <div id="catergory-1" class="auto-grid w-full">
+                  <img
+                    src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m53.png?updatedAt=1750952781028"
+                    class="h-full w-full"
+                    alt=""
+                  />
+                  <img
+                    src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m51.png?updatedAt=1750952706527"
+                    class="h-full w-full"
+                    alt=""
+                  />
+                  <img
+                    src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m53.png?updatedAt=1750952781028"
+                    class="h-full w-full"
+                    alt=""
+                  />
+                  <img
+                    src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m51.png?updatedAt=1750952706527"
+                    class="h-full w-full"
+                    alt=""
+                  />
+                  <img
+                    src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m53.png?updatedAt=1750952781028"
+                    class="h-full w-full"
+                    alt=""
+                  />
+                  <img
+                    src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m51.png?updatedAt=1750952706527"
+                    class="h-full w-full"
+                    alt=""
+                  />
+                  <img
+                    src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m53.png?updatedAt=1750952781028"
+                    class="h-full w-full"
+                    alt=""
+                  />
+                  <img
+                    src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m51.png?updatedAt=1750952706527"
+                    class="h-full w-full"
+                    alt=""
+                  />
+                  <img
+                    src="https://ik.imagekit.io/yn9gz2n2g/Avatars/Male/m53.png?updatedAt=1750952781028"
+                    class="h-full w-full"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <button class="button-fill">Next</button>
+              <button class="button-outline">Previous</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- <script src="../scripts/createAccount.js" type="module"></script> -->
+    <script src="../scripts/signup.js" type="module"></script>
+  </body>
+</html>

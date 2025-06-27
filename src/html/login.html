@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+    <style>
+      input:-webkit-autofill {
+        background-color: #1f2937 !important;
+        -webkit-box-shadow: 0 0 0px 1000px #1f2937 inset !important;
+        -webkit-text-fill-color: white !important;
+        border: 2px solid #3b82f6 !important;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface font-poppins flex h-full items-center justify-center px-4"
+  >
+    <main class="flex flex-col gap-4">
+      <form
+        id="login-form"
+        class="bg-surface-2 flex w-full max-w-[360px] flex-col items-center gap-4 rounded-3xl p-6"
+      >
+        <div class="swiper-text-wrapper flex flex-col items-center gap-2">
+          <div class="swiper h-[64px] w-[64px]">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/asdfimage.png?updatedAt=1750764239152"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/image(1).png?updatedAt=1750764057714"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/image123.png?updatedAt=1750764028288"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/image(2).png?updatedAt=1750764000120"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/image.png?updatedAt=1750763928136"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://ik.imagekit.io/yn9gz2n2g/Avatars/f1?updatedAt=1750750439823"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <p class="text-text-primary text-2xl font-medium">Login</p>
+          <p id="form-related-error" class="text-text-error text-sm"></p>
+        </div>
+        <div class="email-input-wrapper flex flex-col gap-1">
+          <label class="text-text-primary px-1 text-sm" for="email-input"
+            >Email</label
+          >
+
+          <input
+            type="email"
+            autocomplete="off"
+            id="email-input"
+            class="bg-surface-3 border-surface-4 focus:border-surface-3 focus:!ring-primary-400 caret-primary-50 text-primary-50 box-border w-full rounded-lg border-2 px-3 py-1.5 focus:!ring-1 focus:outline-none"
+          />
+          <p id="email-related-error" class="text-text-error px-1 text-sm"></p>
+        </div>
+        <div class="password-input-wrapper flex flex-col gap-1">
+          <label class="text-text-primary px-1 text-sm" for="email-input"
+            >password</label
+          >
+          <input
+            type="password"
+            id="password-input"
+            class="bg-surface-3 border-surface-4 focus:border-surface-3 focus:!ring-primary-400 caret-primary-50 text-primary-50 box-border w-full rounded-lg border-2 px-3 py-1.5 focus:!ring-1 focus:outline-none"
+          />
+          <p
+            id="password-related-error"
+            class="text-text-error px-1 text-sm"
+          ></p>
+        </div>
+        <div class="wrapper flex w-full justify-between">
+          <div class="checkbox-wrapper flex items-center gap-2">
+            <div class="flex items-center">
+              <div class="relative flex cursor-pointer items-center">
+                <input
+                  type="checkbox"
+                  class="peer bg-surface-3 checked:bg-primary-400 !h-4 !w-4 cursor-pointer appearance-none rounded transition-all"
+                  id="check"
+                />
+                <span
+                  class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform text-white opacity-0 peer-checked:opacity-100"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-3 w-3"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <label
+              for="remember-me-checkbox "
+              class="text-text-tertiary text-sm"
+              >Remember me</label
+            >
+          </div>
+          <a href="" class="text-text-link text-sm">Forgot password?</a>
+        </div>
+        <button class="button-fill">Login</button>
+      </form>
+      <div class="no-account-wrppaer flex justify-center gap-1 text-sm">
+        <p class="text-text-primary">New here?</p>
+        <a href="" class="text-text-link"> Create account</a>
+      </div>
+    </main>
+
+    <script src="../scripts/login.js" type="module"></script>
+  </body>
+</html>
