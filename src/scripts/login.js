@@ -1,4 +1,15 @@
-import { app, signInWithEmailAndPassword, auth } from "./firebase.js";
+import {
+  app,
+  signInWithEmailAndPassword,
+  auth,
+  get,
+  equalTo,
+  ref,
+  db,
+  orderByChild,
+  query,
+} from "./firebase.js";
+// import { getStudentData } from "./firebase.js";
 const swiper = new Swiper(".swiper", {
   direction: "horizontal",
   loop: true,
@@ -18,6 +29,7 @@ const passwordInput = document.querySelector("#password-input");
 const emailRelatedError = document.querySelector("#email-related-error");
 const passwordRelatedError = document.querySelector("#password-related-error");
 const formRelatedError = document.querySelector("#form-related-error");
+
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   emailRelatedError.textContent = "";
@@ -32,7 +44,6 @@ loginForm.addEventListener("submit", (e) => {
     }
     return;
   }
-
   const email = emailInput.value;
   const password = passwordInput.value;
   signInWithEmailAndPassword(auth, email, password)
@@ -40,6 +51,7 @@ loginForm.addEventListener("submit", (e) => {
       const user = userCredential.user;
       console.log(user);
       console.log("user logged in ");
+      roleCheck(email);
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -51,3 +63,21 @@ loginForm.addEventListener("submit", (e) => {
       }
     });
 });
+async function roleCheck(email) {
+  const path = ref(db, "students");
+  const q = query(ref(db, "students"), orderByChild("email"), equalTo(email));
+  const snapshot = await get(q)
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        console.log(data);
+        window.location.href = "html/dashboard.html";
+      } else {
+        window.href = "html/dashboard.html";
+      }
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    });
+}

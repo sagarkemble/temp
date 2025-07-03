@@ -57,6 +57,7 @@ html {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 16px;
+  width: fit-content;
   height: fit-content;
 }
 .button-fill {
@@ -104,4 +105,15 @@ input[type="number"] {
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   gap: 16px;
   /* margin: 0 auto; */
+}
+.auto-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .auto-grid-student-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
 }
